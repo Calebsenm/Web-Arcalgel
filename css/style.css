@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+:root{ 
+    --verde: #2aff58;
+    --limon: #15ffcb;
+    --degradado: linear-gradient(90deg, var(--limon), var(--verde));
+}
+
+
+*{ 
+   font-family: 'poppins', sans-sherif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   outline: none;
+   border: none;
+   text-transform: capitalize;
+   
+}
+
+::section{
+    background: var(--limon);
+    color:white;
+}
+
+html{
+    font-size: 62.4%;
+    overflow: hidden;
+    
+}
+body {
+    background: #f9f9f9;
+    
+}
+
+header{ 
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0.5rem 1rem rgba(0,0,0, .1);
+    padding: 2rem 9%;
+    display: flex;
+    aling-items: center;
+    justify-content: space-between;
+    z-index: 1000;               
+}
+header .logo{
+    font-size: 2rem;
+    color: var(--verde);
+    border-radius: 5px;
+    border: solid;
+    padding: 1px 3px;
+    
+}
+
+header .logo span{
+    color: var(--limon);
+    
+    
+}
+header .navbar a{ 
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    color: var(--verde);
+}
+header .navbar a:hover{
+    color:var(--limon);
+}
+
+header input {
+    display: none;
+}
+header label{
+    font-size: 3rem;
+    color: var(--verde);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (max-width:1200px) {
+   
+    html{ 
+    
+        font-size: 55%;
+        
+    }
+}
+
+@media(max-width:768px){
+    header label{         
+        visibility: visible;
+        opacity: 1;     
+    }
+    
+ header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0.5rem 1rem rgba(0,0,0, .1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    
+    header .navbar a{ 
+        display: block;
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+    
+    header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;   
+          
+        
+    }
+
+    header input:checked ~ label::before{ 
+        content: '\f00d';
+        
+    }
+
+       
+    
+}
+
+@media(max-width: 450px){
+html{
+    font-size: 49%;
+}
+    
+}
+
+
+}
